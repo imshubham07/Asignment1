@@ -13,7 +13,7 @@ export type UserDTO = {
 
 export type GraphResponse = { nodes: UserDTO[]; edges: { id: string; source: string; target: string }[] };
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://asignment1-1.onrender.com';
 
 export const fetchGraph = createAsyncThunk('users/fetchGraph', async () => {
   const { data } = await axios.get<GraphResponse>(`${API_URL}/api/graph`);
